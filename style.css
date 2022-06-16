@@ -1,0 +1,10 @@
+p {
+    display: block;
+    width: fit-content;
+    color: red;
+    text-transform: uppercase;
+    font-size: 20px;
+    background-color: aquamarine;
+    margin: 0 auto;
+    text-align: center;
+}
