@@ -45,10 +45,12 @@
 //     asd: {
 //         ffff: [{}, {},],
 //         gds: {
-            
+			
 //         }
 //     }
 // };
+
+// console.log(arrObj.asd);
 // const b = 'b';
 // // arrObj.b = '1234';
 // arrObj[b] = '1234';
@@ -87,18 +89,21 @@
 // console.log(4 + +'4');
 
 
-let incr = 10,
-    decr = 10;
+// let incr = 10,
+//     decr = 10;
 
-    ++incr; //инкримент
-    --decr; //дикримент
-    console.log(++incr); // префиксная форма
-    console.log(--decr); // 
-    console.log(incr++); // постфиксная форма
-    console.log(decr--);
-    
-    console.log(2 + 2 * 2 !== '6');
+//     ++incr; //инкримент
+//     --decr; //дикримент
+//     console.log(++incr); // префиксная форма
+//     console.log(--decr); // 
+//     console.log(incr++); // постфиксная форма
+//     console.log(decr--);
+	
+//     console.log(2 + 2 * 2 !== '6');
 
-    console.log(5 % 2); // остаток от деления 2-х чисел
-    console.log(8 == '8'); // нестрогое равенство
-    console.log(2*4 === 8); // строгое равенство
+//     console.log(5 % 2); // остаток от деления 2-х чисел
+//     console.log(8 == '8'); // нестрогое равенство
+//     console.log(2*4 === 8); // строгое равенство
+
+//////////////////////////////////////////////////////////////
+
