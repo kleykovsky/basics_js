@@ -1,3 +1,4 @@
+'use strict';
 // alert(1);
 // let number = 5;
 // alert(number);
@@ -233,3 +234,137 @@
 // 	} 
 // };
 // reg();
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+///fun.declaration//////////////////
+// let num = 20;
+// function showFirstMessage (text) {
+// 	console.log(text);
+// 	// num = 10;
+// 	console.log(num);
+// }
+// showFirstMessage('hello');
+// console.log(num);
+
+// function calc(a, b) {
+// 	return(a + b);
+// }
+// console.log(calc(4, 3));
+// console.log(calc(5, 5));
+// console.log(calc(1, 2));
+
+
+// function ret() {
+// 	let num = 50;
+
+// 	return num;
+// }
+
+// const anotherNum = ret();
+// console.log(anotherNum);
+
+///// fun.expression///////////
+// const logger = function() {
+// 	console.log('Hello');
+// };
+// logger();
+
+////////стрелочная функция/////////
+// const calc = (a, b) => a + b;
+// console.log(calc(10, 20));
+
+////////// Аргументы ////////////////////////////////////////////////////////////////////////////////////////////////
+/// Пересчет  валют //////////////////////////////
+// const usdCurr = 10800;
+// const eurCurr = 11200;
+
+// function convert(amount, curr) {
+// 	return amount * curr;
+// }
+// console.log(convert(100, usdCurr));
+// console.log(convert(100, eurCurr));
+
+///////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+///////////////// Return ///////////////////////////////
+const usdCurr = 10800;
+const discount = 0.9;
+
+function convert(amount, curr) {
+	return curr * amount;
+}
+console.log(convert(100, usdCurr));
+/////////////////////////////////////////////////////////
+function promotion(result) {
+	console.log(result * discount);
+}
+const res = convert(100, usdCurr);
+promotion(res);
+///////////////////////////////////////////////////////
+function test() {
+	for (let i = 0; i < 5; i++) {
+		console.log(i);
+		if (i === 3) {
+			return;   //////Досрочно заканчиваем фун-ю/////
+		}
+	}
+	console.log('Done');
+}
+test();
+///////////////////////////////////////////////////////
+function doNothing() {}
+console.log(doNothing() === undefined);
+////////////////////////////////////////////////////////
+
+//////////////////HW/////////////////////////////////////////
+////1
+
+// function sayHello(name) {
+// 	return `Привет,${name}!`;
+// }
+// console.log(sayHello(1));
+
+let userName  = 'Alex';
+let helloUser = 'Привет';
+function hello(userName) {
+	return helloUser + ', ' + userName + '!';
+}
+console.log(typeof(hello(userName)));
+/////2
+
+function num (number) {
+	return [number -1, number, number + 1];
+}
+console.log(num(10));
+///////3
+
+// function getMathResult(num, repeat) {
+// 	if(typeof(repeat) !== 'number' || repeat <= 0) {
+// 		return num;
+// 	}
+
+// }
+
+function getMathResult(num, times) {
+    if (typeof(times) !== 'number' || times <= 0) {
+        return num;
+    }
+
+    let str = '';
+
+    for (let i = 1; i <= times; i++) {
+        if (i === times) {
+            str += `${num * i}`;
+            // Тут без черточек в конце
+        } else {
+            str += `${num * i}---`;
+            // Это тоже самое, что и
+            // str = str + num * i + "---";
+        }
+    }
+    return str;
+}
+console.log(getMathResult(2, 5));
