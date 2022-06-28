@@ -23,11 +23,11 @@
 
 'use strict';
 
-const number0Films = +prompt('Сколько фильмов Вы посмотрели?', '');
-console.log(number0Films);
+const number0fFilms = +prompt('Сколько фильмов Вы посмотрели?', '');
+console.log(number0fFilms);
 
 const personalMoveDB = {
-	count: number0Films,
+	count: number0fFilms,
 	movies: {},
 	actors: {},
 	genres: [],

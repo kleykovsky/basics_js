@@ -1,4 +1,4 @@
-'use strict';
+// 'use strict';
 // alert(1);
 // let number = 5;
 // alert(number);
@@ -347,24 +347,32 @@ console.log(num(10));
 // 	}
 
 // }
-
 function getMathResult(num, times) {
-    if (typeof(times) !== 'number' || times <= 0) {
-        return num;
-    }
-
-    let str = '';
-
-    for (let i = 1; i <= times; i++) {
-        if (i === times) {
-            str += `${num * i}`;
-            // Тут без черточек в конце
-        } else {
-            str += `${num * i}---`;
-            // Это тоже самое, что и
-            // str = str + num * i + "---";
-        }
-    }
-    return str;
+	if (typeof(times) !== 'number' || times <= 0) {
+		return num;
+	}
+	let str = '';
+	for (let i = 1; i <= times; i++) {
+		if (i === times) {
+			str += `${num * i}`;
+		} else {
+			str += `${num * i}---`;
+		}
+	}
+	return str; 
 }
 console.log(getMathResult(2, 5));
+
+// function getMathResult(num, times){
+//     if (typeof times != "number" || times <= 0){
+//         return num;
+//     }
+//     let resultStr = num;
+//     let resultNum = num;
+//     for(let i=2;i<=times;i++){
+//         resultNum = num*i;
+//         resultStr += "---" + resultNum;
+//     }
+//     return resultStr;
+// }
+// console.log(getMathResult(2, 5));
