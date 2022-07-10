@@ -138,7 +138,7 @@
 // 1
 // const arr = [3, 5, 8, 16, 20, 23, 50];
 // const result = [];
-    
+	
 //     for (let i = 0; i < arr.length; i++ ) {
 //         result[i] = arr[i];
 //     }
@@ -213,3 +213,163 @@
 // }
 //////////////////////////////////////////////////
 //////////////////////////////////////////////////
+
+/////// HW ////////////////////////////////////// Задача: вычеслbnm объем и площадm полной певерхности куба. 
+////1
+// function calculateVolumeAndArea(a) {
+// 	if (typeof(a) !== 'number' || a < 0 || !Number.isInteger(a)) {
+// 		return 'При вычислении произошла ошибка';
+// 	}
+// 	const lengthRib = 6 * (a * a);
+// 	const facetCube = a * a * a;
+// 	return `Объем куба: ${facetCube}, площадь всей поверхности: ${lengthRib}`,
+// 	console.log(`Объем куба: ${facetCube}, площадь всей поверхности: ${lengthRib}`);
+// }
+// calculateVolumeAndArea(5);
+
+/////////ivan
+
+// function calculateVolumeAndArea(length) {
+//     if (typeof(length) !== 'number' || length < 0 || !Number.isInteger(length)) {
+//         return "При вычислении произошла ошибка";
+//     }
+//     let volume = 0,
+//         area = 0;
+//     volume = length * length * length;
+//     // length ** 3 - это тоже самое, что и выше или варианты через цикл.
+//     // ** - это оператор степени, напоминаю. Но онлайн редактор его не принимает =/
+//     area = 6 * (length * length);
+//     return `Объем куба: ${volume}, площадь всей поверхности: ${area}`;
+// }
+// calculateVolumeAndArea(5);
+///////////////////////////////////////////////// Задача: определить номер купе по переданому ей номкру места. 
+///2
+// function getCoupeNumber(seatNumber) {
+// 	if (typeof(seatNumber) !== 'number' || seatNumber < 0 || !Number.isInteger(seatNumber)) {
+// 		return 'Ошибка. Прверте правильноcть введенного номера места';
+// 	} else if (seatNumber === 0 || seatNumber > 36) {
+// 		return 'Таких мест в вагоне не существует';
+// 	}
+// 	for ( let i = 4; i <= 36; i = i + 4) {
+// 		if (seatNumber <= i) {
+// 			return i / 4;
+// 		}
+// 	}
+// }
+// console.log(getCoupeNumber(33));
+
+/////// ivan
+
+// function getCoupeNumber(seatNumber) {
+//     if (typeof(seatNumber) !== 'number' || seatNumber < 0 || !Number.isInteger(seatNumber)) {
+//         return "Ошибка. Проверьте правильность введенного номера места";
+//     }
+//     if (seatNumber === 0 || seatNumber > 36) {
+//         return "Таких мест в вагоне не существует";
+//     }
+//     for (let i = 4; i <= 36; i = i + 4) {
+//         if (seatNumber <= i) {
+//             return Math.ceil(i / 4);
+//         }
+//     }
+//     // тут очень много вариантов решения, но выбрал один из элегантных :)
+// }
+
+// getCoupeNumber(33);
+///////////////////////////////////////////////////////// Задача: создать функцию которая принимает в себя целое 
+/////////////////////////////////////////////////////////число минут и возвращает время в нужном формате строки.
+// function getTimeFromMinutes(totalMinutes) {
+// 	if (typeof(totalMinutes) !== 'number' || totalMinutes < 0 || !Number.isInteger(totalMinutes)) {
+// 		return 'Ошибка, проверьте данные';
+// 	}
+// 	const hours = Math.floor(totalMinutes / 60);
+// 	const minutes = totalMinutes % 60;
+// 	let hoursStr = '';
+// 	switch(hours) {
+// 		case 0:
+// 			hoursStr = 'Часов';
+// 			break;
+// 		case 1:
+// 			hoursStr = 'Час';
+// 			break;
+// 		case 2:
+// 		case 3:
+// 		case 4:
+// 			hoursStr = 'Часа';
+// 			break;
+// 		default:
+// 			hoursStr = 'Часов';
+// 	}
+// 	// console.log(`Это ${hours} ${hoursStr} и ${minutes} минут`);
+// 	return `Это ${hours} ${hoursStr} и ${minutes} минут`;
+// }
+// console.log(getTimeFromMinutes(600));
+///////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////Задача: Напишите функцию, которая принимает в 
+// себя 4 числа и возвращает самое большее из них.
+// Если один из аргументов не является числом или их меньше 4 - возврвщается 0
+
+// function getMaxNum(a, b, c, d) {
+// 	if (typeof(a, b, c, d) !== 'number'){
+// 		return 0;
+// 	} else {
+// 		return Math.max(a, b, c, d);
+// 	}
+// }
+// console.log(getMaxNum(1, 2, 1, 999999));
+// getMaxNum(123, 12222, 2, 1);
+/////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////Задача: Создайте функцию, которая будет принимать в 
+// себя один аргумент-целое положительное число. Она должна возвращать  строку, в которой будут через пробел выведены  
+// числа Фибоначчи. Причем, их количество должно быть равно переданному аргументу.
+// Если переданный аргумент не числ - вернуть пустую строку. Решать без пременения рекурсии.
+
+function fib(num) {
+if (typeof(num)!== 'number' || num <= 0 || !Number.isInteger(num)) {
+	return '';
+}
+let zero = 0;
+let one = 1;
+let res = '';
+	for (let i = 0; i < num; i++) {
+		if (i + 1 === num) {
+			res += `${zero}`;
+		} else {
+			res += `${zero} `;
+		}
+		let total = zero + one;
+		zero = one;
+		one = total;
+		console.log(res);
+	}
+	return res;
+}
+fib(10);
+///Ivan
+// function fib(num) {
+//     if (typeof(num) !== 'number' || num <= 0 || !Number.isInteger(num)) {
+//         return "";
+//     }
+
+//     let result = '';
+//     let first = 0;
+//     let second = 1;
+
+//     for (let i = 0; i < num; i++) {
+//         if (i + 1 === num) {
+//             result += `${first}`;
+//             // Без пробела в конце
+//         } else {
+//             result += `${first} `;
+//         }
+
+//         let third = first + second;
+//         first = second;
+//         second = third;
+//     }
+// 	console.log(result);
+
+//     return result;
+// }
+// fib(5);
+/////////////////////////////////////////////////////

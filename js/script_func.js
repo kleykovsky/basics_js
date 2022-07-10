@@ -290,33 +290,33 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ///////////////// Return ///////////////////////////////
-const usdCurr = 10800;
-const discount = 0.9;
+// const usdCurr = 10800;
+// const discount = 0.9;
 
-function convert(amount, curr) {
-	return curr * amount;
-}
-console.log(convert(100, usdCurr));
+// function convert(amount, curr) {
+// 	return curr * amount;
+// }
+// console.log(convert(100, usdCurr));
 /////////////////////////////////////////////////////////
-function promotion(result) {
-	console.log(result * discount);
-}
-const res = convert(100, usdCurr);
-promotion(res);
+// function promotion(result) {
+// 	console.log(result * discount);
+// }
+// const res = convert(100, usdCurr);
+// promotion(res);
 ///////////////////////////////////////////////////////
-function test() {
-	for (let i = 0; i < 5; i++) {
-		console.log(i);
-		if (i === 3) {
-			return;   //////Досрочно заканчиваем фун-ю/////
-		}
-	}
-	console.log('Done');
-}
-test();
+// function test() {
+// 	for (let i = 0; i < 5; i++) {
+// 		console.log(i);
+// 		if (i === 3) {
+// 			return;   //////Досрочно заканчиваем фун-ю/////
+// 		}
+// 	}
+// 	console.log('Done');
+// }
+// test();
 ///////////////////////////////////////////////////////
-function doNothing() {}
-console.log(doNothing() === undefined);
+// function doNothing() {}
+// console.log(doNothing() === undefined);
 ////////////////////////////////////////////////////////
 
 //////////////////HW/////////////////////////////////////////
@@ -327,18 +327,18 @@ console.log(doNothing() === undefined);
 // }
 // console.log(sayHello(1));
 
-let userName  = 'Alex';
-let helloUser = 'Привет';
-function hello(userName) {
-	return helloUser + ', ' + userName + '!';
-}
-console.log(typeof(hello(userName)));
+// let userName  = 'Alex';
+// let helloUser = 'Привет';
+// function hello(userName) {
+// 	return helloUser + ', ' + userName + '!';
+// }
+// console.log(typeof(hello(userName)));
 /////2
 
-function num (number) {
-	return [number -1, number, number + 1];
-}
-console.log(num(10));
+// function num (number) {
+// 	return [number -1, number, number + 1];
+// }
+// console.log(num(10));
 ///////3
 
 // function getMathResult(num, repeat) {
@@ -347,21 +347,21 @@ console.log(num(10));
 // 	}
 
 // }
-function getMathResult(num, times) {
-	if (typeof(times) !== 'number' || times <= 0) {
-		return num;
-	}
-	let str = '';
-	for (let i = 1; i <= times; i++) {
-		if (i === times) {
-			str += `${num * i}`;
-		} else {
-			str += `${num * i}---`;
-		}
-	}
-	return str; 
-}
-console.log(getMathResult(2, 5));
+// function getMathResult(num, times) {
+// 	if (typeof(times) !== 'number' || times <= 0) {
+// 		return num;
+// 	}
+// 	let str = '';
+// 	for (let i = 1; i <= times; i++) {
+// 		if (i === times) {
+// 			str += `${num * i}`;
+// 		} else {
+// 			str += `${num * i}---`;
+// 		}
+// 	}
+// 	return str; 
+// }
+// console.log(getMathResult(2, 5));
 
 // function getMathResult(num, times){
 //     if (typeof times != "number" || times <= 0){
@@ -376,3 +376,29 @@ console.log(getMathResult(2, 5));
 //     return resultStr;
 // }
 // console.log(getMathResult(2, 5));
+//////////// CallBack///////////////////////////////////
+
+// function first() {
+// 	//Do something
+// 	setTimeout(function() {
+// 		console.log(1);
+// 	}, 500);
+// }
+// function second() {
+// 	console.log(2);
+// }
+// first();
+// second();
+
+function learnJS(lang, callback) {
+	console.log(`Я учу: ${lang}`);
+	callback();
+}
+
+function done() {
+	console.log('Go');
+}
+
+learnJS('JavaScript', done);
+////////////////////////////////////////////
+

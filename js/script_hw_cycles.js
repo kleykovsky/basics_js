@@ -59,10 +59,9 @@ const personalMoveDB = {
 // 	}
 // 	i++;
 // }
-
 function rememberMyFilms() {
 	for (let i = 0; i < 2; i++) {
-		const a = prompt('Один из последних просмотренных фильмов?', ''),
+		const a = prompt('Один из последних просмотренных фильмов?', '').trim(),
 			  b = prompt('На сколько оцените его?', '');
 		if (a != null && b != null && a  != '' && b != '' && a.length < 50) {
 			personalMoveDB.movies[a] = b;
@@ -73,7 +72,7 @@ function rememberMyFilms() {
 		}
 	}
 }
-// rememberMyFilms();
+rememberMyFilms();
 
 // function writeYourGenres() {
 // 	for (let i = 0; i < 3; i++) {
@@ -93,7 +92,7 @@ function detectPersonalLevel() {
 		console.log('Произошла ошибка');
 	}
 }
-// detectPersonalLevel();
+detectPersonalLevel();
 
 function showMyDb(hidden) {
 	if (!hidden) {
@@ -103,8 +102,8 @@ function showMyDb(hidden) {
 showMyDb(personalMoveDB);
 
 function writeYourGenres() {
-	for (let i = 1; i <= 3; i++) {
-		personalMoveDB.genres[i - 1] = prompt(`Ваш любимый жанр под номером ${i}`);
+	for (let i = 1; i <= 1; i++) {
+		personalMoveDB.genres[i - 1] = prompt(`Ваш любимый жанр под номером ${i}`).trim();
 	}
 }
 writeYourGenres();
