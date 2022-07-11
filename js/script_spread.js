@@ -242,9 +242,3 @@ function availableCurr(arr, missingCurr) {
 console.log(availableCurr([...baseCurrencies, ...additionalCurrencies]));
 
 ///////////////////////////////////////////////////////////////////////
-
-
-let stir = 'aaa ddd ffff';
-console.log(stir);
-let stir2 = stir.split('').reverse().join('');
-console.log(stir2);
