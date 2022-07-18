@@ -1,4 +1,4 @@
-// 'use strict';
+'use strict';
 // alert(1);
 // let number = 5;
 // alert(number);
@@ -145,7 +145,7 @@
 // 	console.log('Hello ' + user + '!');
 // }
 // humanSayHello('Alex');
-// console.log(count);
+// console.log();
 
 // function calc(a, b) {
 // 	console.log(a + b);
@@ -390,15 +390,155 @@
 // first();
 // second();
 
-function learnJS(lang, callback) {
-	console.log(`Я учу: ${lang}`);
-	callback();
+// function learnJS(lang, callback) {
+// 	console.log(`Я учу: ${lang}`);
+// 	callback();
+// }
+
+// function done() {
+// 	console.log('Go');
+// }
+
+// learnJS('JavaScript', done);
+// ////////////////////////////////////////////
+
+// function ask(questions, yes, no) {
+// 	// (questions == 1) ? yes() : 
+// 	// (questions == 2) ? no() : 
+// 	// console.log('Error: 223232');
+// 	if (questions == 1) {
+// 		yes();
+// 	} else if (questions == 0) {
+// 		no();
+// 	} else {
+// 		console.log('Error: 23232');
+// 	}
+// }
+// function showYes () {
+// 	console.log('Yes');
+// }
+// function showNo () {
+// 	console.log('No');
+// }
+// ask(1, showYes, showNo);
+
+////////////////Замыкание//////////////////////////
+
+// let number = 5; debugger
+
+// function logNumber() {
+// 	let number = 4; debugger
+// 	console.log(number);
+// }
+
+// number = 6;
+
+// logNumber(); debugger
+
+// let num = 4;
+// console.log(typeof(String(num)));
+
+// function createCounter() {
+// 	let counter = 0;
+// 	const myFunction = function() {debugger
+// 		counter = counter + 1;debugger
+// 		return counter;debugger
+// 	};
+// 	return myFunction;
+// }
+// debugger
+// const increment = createCounter();debugger
+// const c1 = increment();debugger
+// const c2 = increment();debugger
+// const c3 = increment();debugger
+
+// console.log(c1, c2, c3);
+
+/////////tests/////////////////////////
+// let x = 5;
+// console.log(++x);
+
+// [] + false - null + true
+// console.log(typeof([] + false));
+
+// let y = 1; 
+// let x = y = 2;
+// console.log(x);
+
+// [] + 1 + 2
+// console.log([] + 1 + 2);
+
+// console.log('1'[0]);
+
+// console.log(2 && 1 && null && 0 && undefined);
+
+// console.log(!!(1 && 2) === (1 && 2));
+
+// console.log(null || 2 && 3 || 4);
+
+// let a = [1, 2, 3]; 
+// 	b = [1, 2, 3];
+
+
+// console.log(0 || '' || 2 || undefined || true || false);
+
+//////////////////////////////////////////////////////////
+
+///////////////////////HW///////////////////////////////////
+
+const restorantData = {
+    menu: [
+        {
+            name: 'Salad Caesar',
+            price: '14$'
+        },
+        {
+            name: 'Pizza Diavola',
+            price: '9$'
+        },
+        { 
+            name: 'Beefsteak',
+            price: '17$'
+        },
+        {
+            name: 'Napoleon',
+            price: '7$'
+        }
+    ],
+    waitors: [
+        {name: 'Alice', age: 22}, {name: 'John', age: 24}
+    ],
+    averageLunchPrice: '20$',
+    openNow: true
+	
+};
+
+function isOpen(prop) {
+    let answer = '';
+    prop ? answer = 'Открыто' : answer = 'Закрыто';
+    return answer;
+}
+console.log(isOpen(restorantData.openNow));
+
+function isAverageLunchPriceTrue(fDish, sDish, average) {
+    if (+fDish.price.slice(0, -1) + (+sDish.price.slice(0, -1)) < +average.slice(0, -1)) {
+        return 'Цена ниже средней';
+    } else {
+        return 'Цена выше средней';
+    }
+	
 }
 
-function done() {
-	console.log('Go');
+console.log(isAverageLunchPriceTrue(restorantData.menu[1], restorantData.menu[3], restorantData.averageLunchPrice));
+
+function transferWaitors(data) {
+    const copy = Object.assign({}, data);
+
+    copy.waitors = [{name: 'Mike', age: 32}];
+    return copy;
 }
 
-learnJS('JavaScript', done);
-////////////////////////////////////////////
+transferWaitors(restorantData);
+
+//////////////////////////////////////////////////////////////////////////
 

@@ -205,7 +205,7 @@ function reverse(str) {
 	if (typeof(str) !== 'string') {
 		return 'Ошибка!';
 	}
-	return str.split('').reverse().join('');
+	return str.split('').reverse('').join('');
 }
 console.log(reverse(someString));
 
@@ -216,7 +216,7 @@ const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
 
 function availableCurr(arr, missingCurr) {
     let str = '';
-    arr.length === 0 ? str = 'Нет доступных валют' : str = 'Доступные валюты:\n';
+    // arr.length === 0 ? str = 'Нет доступных валют' : str = 'Доступные валюты:\n';
 	
 	// if (arr.length === 0) {
 	// 	str = 'Нет доступных валют';

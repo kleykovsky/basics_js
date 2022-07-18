@@ -9,11 +9,11 @@
 // console.log(str.toLowerCase());
 
 
-// let fruit = 'Some fruit';
-// console.log(fruit.indexOf('f'));
+let fruit = 'Some fruit';
+console.log(fruit.indexOf('f'));
 
 const logg = 'Hello World';
-// console.log(logg.slice(2, 11));
+console.log(logg.split(''));
 
 console.log(logg.substring(1, 3));
 ///////////////////////////////////////////

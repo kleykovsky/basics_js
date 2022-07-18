@@ -22,10 +22,7 @@ const john = Object.create(solder); // Создает прототипную с�
 //     health: 100
 // };
 
-
-
 // john.__proto__ = solder;  //Устаревший формат
-
 
 // Object.setPrototypeOf(john, solder); //Устанавливает проторип
 

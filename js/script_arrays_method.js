@@ -1,16 +1,21 @@
 //// Сортировка массива ///////////////////////////////
 
 // let arrOne = ['Alex', 'Bob', 'Jon', 1, 2, 3];
-// let arrTwo = [10, 20, 30, {name: 'Alex', age: 33}, 'Alex', [2, 1, 4]];
-// let arrThree = [1, 2, 3, 23, 44, 5, 66, 11, 22];
-
+let arrTwo = [10, 20, 30, {name: 'Alex', age: 33}, 'Alex', [2, 1, 4]];
+let arrThree = [1, 2, 3, 23, 44, 5, 66, 11, 22];
+// let arr = [1, 2, 3, 23, 44, 5, 66, 11, 22];
 // console.log(arrOne.sort());
-// console.log(arrTwo.toString());
+console.log(arrTwo.toString());
 // console.log(arrThree.sort());
+
+
+// let result = arr.map(function(item, index, array) {
+//    console.log(item, index, array); // возвращается новое значение вместо элемента
+//   });
 
 //// стрелочная функ-я для сортировки массива //////////////////////////
 
-// console.log(arrThree.sort((a, b) => a - b));
+console.log(arrThree.sort((a, b) => a - b));
 
 // Преобразование массива ///////////////////////////////
 
@@ -125,13 +130,16 @@
 ///////////////////////////////////////////////////////
 /// Массивы и псевдомассивы
 // const arr = [1, 2, 3, 4, 5];
-const arr = [5, 4, 3, 2, 1];
-arr.sort(compareNum);
-console.log(arr);
+// const arr = [5, 4, 3, 2, 1];
+// arr.sort(compareNum);
+// console.log(arr);
 
-function compareNum(a, b) {
-    return a - b;
-}
+// function compareNum(a, b) {
+//     return a - b;
+    
+// }
+
+
 
 // const str = 'asd';
 // arr[99] = 0;
