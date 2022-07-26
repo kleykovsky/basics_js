@@ -1,11 +1,11 @@
 //// Сортировка массива ///////////////////////////////
 
 // let arrOne = ['Alex', 'Bob', 'Jon', 1, 2, 3];
-let arrTwo = [10, 20, 30, {name: 'Alex', age: 33}, 'Alex', [2, 1, 4]];
+// let arrTwo = [10, 20, 30, {name: 'Alex', age: 33}, 'Alex', [2, 1, 4]];
 let arrThree = [1, 2, 3, 23, 44, 5, 66, 11, 22];
 // let arr = [1, 2, 3, 23, 44, 5, 66, 11, 22];
 // console.log(arrOne.sort());
-console.log(arrTwo.toString());
+// console.log(arrTwo.toString());
 // console.log(arrThree.sort());
 
 
@@ -20,18 +20,18 @@ console.log(arrThree.sort((a, b) => a - b));
 // Преобразование массива ///////////////////////////////
 
 // // let arrOne = ['Alex', 'Bob', 'Jon', 1, 2, 3];
-// let arrTwo = [10, 20, 30, {name: 'Alex', age: 33, key: 22}, [2, 1, 4]];
+let arrTwo = [10, 20, 30, {name: 'Alex', age: 33, key: 22}, [2, 1, 4]];
 // // // // let arrThree = [1, 2, 3, 23, 44, 5, 66, 11, 22];
 
-// let newArr = arrTwo.map(person => {
-// 	return person;
-// });
+let newArr = arrTwo.map(person => {
+	return person;
+});
 
-// // // console.log(arrTwo);
-// console.log(newArr);
-// for (let i of newArr) {
-//     console.log(i);
-// }
+console.log(arrTwo);
+console.log(newArr);
+for (let i of newArr) {
+    console.log(i);
+}
 //////////////////////////////////////////////////////////
 
 // Добавления эл-а в массива ///////////////////////////////
@@ -177,10 +177,7 @@ console.log(products);
    
 // }
 
-
-
 products.forEach(value => console.log(value));
-
 
 // console.log(arr);
 // // arr.pop();   /// dell elem to the end of the array
@@ -192,3 +189,56 @@ products.forEach(value => console.log(value));
 // for (let i = 0; i < arr.length; i++) {
 //     console.log(arr[i]);
 // }
+
+////////////////Делим массив на подмосивы//////////////////////////
+
+// function sliceIntoChunks(arr, chunkSize) {
+//     const res = [];
+//     for (let i = 0; i < arr.length; i += chunkSize) {
+//         const chunk = arr.slice(i, i + chunkSize);
+//         res.push(chunk);
+//     }
+//     return res;
+// }
+
+// const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// console.log(sliceIntoChunks(arr, 3));
+////////////////////////////////////////////////////////////////////
+
+////////////////////////HW///////////////////////////////////////////
+////Делим массив на 3 подмосива + элемент как строка/////////////////////
+const students = ['1', '2', '3', '4', '5', '6', '7', '8', '10'];
+function sortStudentsByGroup(arr) {
+    const gr1 = [], gr2 = [], gr3 = [], rem = []; 
+    arr.sort();
+    for (let i = 0; i < arr.length; i++) {
+        if (i < 3) {
+            gr1.push(arr[i]);
+        } else if (i < 6 && i >= 3) {
+            gr2.push(arr[i]);
+        } else if (i < 9 && i >= 6) {
+            gr3.push(arr[i]);
+        } else {
+            rem.push(arr[i]);
+        }
+    }
+    return [gr1, gr2, gr3, `Оставшиеся студенты: ${rem.length === 0 ? '-' : rem.join(', ')}`];
+}
+sortStudentsByGroup(students);
+////////////////////////////////////////////////////////////////////
+
+// const arr = ['1', '2', [3]];
+// const arr2 = [...arr, 'eee', {name: 'a', age: 11}];
+// console.log(arr2);
+
+// const obj = {
+//     name: 'A',
+//     age: 1
+// };
+// console.log(obj);
+
+// const newObj  = {
+//     ...obj,
+//     name: 'B'
+// };
+// console.log(newObj);

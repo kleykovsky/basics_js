@@ -57,28 +57,28 @@ let students = {
 };
 //припомощи обычной функции( с перебором при помощи for...of, for)
 // 1 
-// function getTotalProgressByIteration(data) {
-//     let total = 0;
-//     let students = 0;
+function getTotalProgressByIteration(data) {
+    let total = 0;
+    let students = 0;
 
-//     for (let course of Object.values(data)) {
-//         if (Array.isArray(course) ){
-//             students += course.length;
-//             for (let i = 0; i < course.length; i++) {
-//                 total += course[i].progress;
-//             }
-//         } else {
-//             for (let subCourse of Object.values(course)) {
-//                 students += subCourse.length;
-//                 for (let i = 0; i < subCourse.length; i++) {
-//                     total += subCourse[i].progress;
-//                 }
-//             }
-//         }
-//     }    
-//     return total / students;
-// }
-// console.log(getTotalProgressByIteration(students));
+    for (let course of Object.values(data)) {
+        if (Array.isArray(course) ){
+            students += course.length;
+            for (let i = 0; i < course.length; i++) {
+                total += course[i].progress;
+            }
+        } else {
+            for (let subCourse of Object.values(course)) {
+                students += subCourse.length;
+                for (let i = 0; i < subCourse.length; i++) {
+                    total += subCourse[i].progress;
+                }
+            }
+        }
+    }    
+    return total / students;
+}
+console.log(getTotalProgressByIteration(students));
 /////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////
 //функция рекурсия
@@ -122,3 +122,13 @@ function factorial(n) {
     }
 }
 console.log(factorial(4));
+
+function rekursiya(x, n) {
+    if (n === 1) {
+        return x;
+    } else {
+        return x * rekursiya(x, n - 1);
+    }
+}
+console.log(rekursiya(2, 4)); 
+
