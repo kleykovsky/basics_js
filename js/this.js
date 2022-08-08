@@ -99,20 +99,3 @@ function choose() {
 // 2. Контекст у методо объекта  - сам объект
 // 3. this в кострукторах и классах - это новый экземпляр объекта
 // 4. Ручная привязка this: call, apply, bind
-
-
-////random
-
-// let max = 290,
-//     min = 180;
-
-// let max = 240,
-//     min = 112;
-
-//     let randomColor = () => {
-//         return `#${(Math.floor(Math.random() * (max - min) + min))}`;
-//     };
-// let color2 = randomColor();
-// // let c2 = `#${c()}`;
-// console.log(color2);
-// // console.log(typeof(c2));
