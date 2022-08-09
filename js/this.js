@@ -74,9 +74,3 @@ console.log(double(4, 2));
 // 2. Контекст у методо объекта  - сам объект
 // 3. this в кострукторах и классах - это новый экземпляр объекта
 // 4. Ручная привязка this: call, apply, bind
-
-
-function setOptions(height, width, ...additional) {
-    console.log(height, width, ...additional);
-}
-setOptions(400, 500, ' ', '44444', 'gdgdfgd', 2, 444);
