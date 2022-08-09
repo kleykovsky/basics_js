@@ -1,4 +1,4 @@
-// 'use stric';
+'use stric';
 
 // function showThis(a, b) {
 //     console.log(this);
@@ -49,53 +49,34 @@
 //     return this*num;
 // }
 
-// const double = count.bind(2);
-// console.log(double(3));
-// console.log(double(13));
-// let color = document.getElementById('color');
-let bgColorWhite = document.getElementById('whiteBackground');
-let bgColorBlack = document.getElementById('blackBackground');
-let body = document.getElementById('body');
 let btn = document.getElementById('btn');
+ btn.addEventListener('click', function() {
+    this.style.backgroundColor = 'grey';
+    console.log('ok');
+ });
 
-// console.log(btn);
-
-function choose() {
-    let arr = color.querySelectorAll('option');
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i].selected) body.style.cssText = `background-color: ${arr[i].value}`;
+const obj = {
+    num: 5,
+    sayNumber: function() {
+        const say = () => {
+            console.log(this.num);
+        };
+        say();
     }
-    
-
 };
-// bgColorBlack.addEventListener('click', function() {
-//     body.style.cssText = 'background-color: black';
-//     // console.log(this);;
-//     console.log('ok');
-// });
+obj.sayNumber();
 
-// btn.addEventListener('click', function() {
-//     body.style.cssText = 'background-color: grey';
-//     console.log('ok');
-//     // document.getElementById('blackBackground').setAttribute('selected', true);
-// });
+const double = (a, b) => a * b;
+console.log(double(4, 2));
 
-
-// const obj = {
-//     num: 5,
-//     sayNumber: function() {
-//         const say = () => {
-//             console.log(this.num);
-//         };
-//         say();
-//     }
-// };
-// obj.sayNumber();
-
-// const double = (a, b) => a * b;
-// console.log(double(4, 100));
 
 // 1. Обычная функция: this = window, но если use stric - undefined
 // 2. Контекст у методо объекта  - сам объект
 // 3. this в кострукторах и классах - это новый экземпляр объекта
 // 4. Ручная привязка this: call, apply, bind
+
+
+function setOptions(height, width, ...additional) {
+    console.log(height, width, ...additional);
+}
+setOptions(400, 500, ' ', '44444', 'gdgdfgd', 2, 444);
