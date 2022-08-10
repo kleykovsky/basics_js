@@ -9,10 +9,10 @@ class Rectangle { // Инкапсуляция (концепция класса R
     }
 }
 
-const square = new Rectangle(10, 10); // square - экземляр, был создан на основе концепции Rectangle
-const long = new Rectangle(3, 4);   // экзепляр
-console.log(square.calcArea());
-console.log(long.calcArea());
+// const square = new Rectangle(10, 10); // square - экземляр, был создан на основе концепции Rectangle
+// const long = new Rectangle(3, 4);   // экзепляр
+// console.log(square.calcArea());
+// console.log(long.calcArea());
 
 
 
@@ -28,6 +28,21 @@ class ColoredRectangleWithText extends Rectangle { // Наследование �
 }
 
 const div = new ColoredRectangleWithText(25, 10, 'Go', 'Red');
-div.showMyProps();
+// div.showMyProps();
 console.log(div.calcArea());
 
+
+
+class sum {
+    constructor(c) {
+        this.a = 10;
+        this.c = c;
+        this.totalSum();
+    }
+    totalSum() {
+        return this.c = this.c * this.a;
+    }
+}
+
+const sumC = new sum(2);
+console.log(sumC.totalSum());
