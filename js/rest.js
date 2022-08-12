@@ -7,4 +7,4 @@ log(1, 2, '3');
 function calcOrDouble(number, basis = 2) {
     console.log(number * basis);
 }
-calcOrDouble(5, 3);
+calcOrDouble(5);
