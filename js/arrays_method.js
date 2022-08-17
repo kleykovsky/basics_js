@@ -242,3 +242,72 @@ sortStudentsByGroup(students);
 //     name: 'B'
 // };
 // console.log(newObj);
+
+
+
+///////////////////////////////Методы перебора//////////////////////////
+///////////////Filtr
+// const names = ['Alex', 'Ivan', 'Vladelen'];
+// const shortNames = names.filter(name => name.length < 5);
+// console.log(shortNames);
+//[ 'Alex', 'Ivan' ]
+
+
+///////////Map
+// let answers = ['AleX', 'iVAN', 'Go'];
+// const result = answers.map(item => item.toLowerCase());
+// console.log(result);
+//[ 'alex', 'ivan', 'go' ]
+
+////////////every/some
+// let some = [1, 'iVAN', 'Go'];
+// console.log(some.every(item => typeof(item) === 'number'));
+//false
+
+// console.log(some.some(item => typeof(item) === 'number'));
+//true
+
+/////////////////reduce
+// const arr = [1,2,3,43,5];
+
+// const result = arr.reduce((sum, current) => sum + current, 2);
+// console.log(result);
+//56
+
+// const arr = ['apple', 'pear', 'plum'];
+
+// const result = arr.reduce((sum, current) => `${sum}, ${current}` );
+// console.log(result);
+//apple, pear, plum
+
+// const obj = {
+//     alex: 'person',
+//     ivan: 'person',
+//     cat: 'animal',
+//     dog: 'animal',
+// };
+// const newArray = Object.entries(obj)
+// .filter(value => value[1] === 'person')
+// .map(value => value[0]);
+// console.log(newArray);
+///[ 'alex', 'ivan' ]
+/////////////////////////HW///////////////////////////////////////////
+
+const films = [
+    {
+        name: 'Titanic',
+        rating: 9
+    },
+    {
+        name: 'Die hard 5',
+        rating: 5
+    },
+    {
+        name: 'Matrix',
+        rating: 8
+    },
+    {
+        name: 'Some bad film',
+        rating: 4
+    }
+];
