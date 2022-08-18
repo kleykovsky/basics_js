@@ -400,19 +400,100 @@
 // }
 
 // learnJS('JavaScript', done);
-// ////////////////////////////////////////////
+///////////////////////////////////////////////
+//example:
+// function squad(item) {
+//     return item ** 2;
+// }
+// const arr = [1,2,3,4,5];
+// // const arr2 = arr.map(squad);
+// const arr2 = arr.map(item => item ** 2);
+// console.log(arr2);
+////////////////////////////////////////////////
+//input
+document.querySelector('#btn').addEventListener('click', () => {
+    getData(fixData);
+});
+function getData(fixFunc) {
+    const getData = document.querySelector('#usd').value;
+    console.log(fixFunc(getData));
+}
+function fixData(str) {
+    return str.trim().toLowerCase();
+}
+function fixData2(str) {
+    return str.trim().toUpperCase();
+}
+//////////////////////////////////////////////
+//Асинхронные callback функции
+
+// async function pageLoader(callback) {
+//     const data = await fetch('https://jsonplaceholder.typicode.com/todos/1');
+//     callback(data);
+// }
+
+// function pageLoader(callback) {
+//     fetch('https://jsonplaceholder.typicode.com/todos/1')
+//         .then(response => response.json())
+//         .then(json => callback(json));
+// }
+
+// function getAjax(data) {
+//     console.log('after request');
+//     console.log('response');
+//     console.log(data);
+// }
+// pageLoader(getAjax);
+////////////////////////////////////////////
+//calback hell
+
+// function pageLoader() {
+//     fetch('https://jsonplaceholder.typicode.com/todos/1')
+//     .then(response => response.json())
+//     .then(json => {
+//         console.log('after request');
+//         console.log('response');
+//         console.log(json);
+//         fetch('https://jsonplaceholder.typicode.com/users/' + json.userId)
+//         .then(response => response.json())
+//         .then(json => {
+//             console.log('after request....');
+//             console.log('response:');
+//             console.log(json);
+//         });
+//     });
+// }
+// pageLoader();
+
+function pageLoader(url, callback) {
+    fetch(url)
+        .then(response => response.json())
+        .then(json => callback(json));
+}
+
+
+function getAjax(data) {
+    console.log('after request');
+    console.log('response');
+    console.log(data);
+    pageLoader('https://jsonplaceholder.typicode.com/users/' + data.userId, showUser);
+}
+function showUser(user) {
+    console.log(user);
+}
+pageLoader('https://jsonplaceholder.typicode.com/todos/1', getAjax);
+//////////////////////////////////////////////
+
 
 // function ask(questions, yes, no) {
-// 	// (questions == 1) ? yes() : 
-// 	// (questions == 2) ? no() : 
-// 	// console.log('Error: 223232');
-// 	if (questions == 1) {
-// 		yes();
-// 	} else if (questions == 0) {
-// 		no();
-// 	} else {
-// 		console.log('Error: 23232');
-// 	}
+// 	(questions == 1) ? yes() : (questions == 2) ? no() : console.log('Error: 223232');
+// 	// if (questions == 1) {
+// 	// 	yes();
+// 	// } else if (questions == 2) {
+// 	// 	no();
+// 	// } else {
+// 	// 	console.log('Error: 23232');
+// 	// }
 // }
 // function showYes () {
 // 	console.log('Yes');
@@ -420,8 +501,8 @@
 // function showNo () {
 // 	console.log('No');
 // }
-// ask(1, showYes, showNo);
-
+// ask(0, showYes, showNo);
+//////////////////////////////////////////////////
 ////////////////Замыкание//////////////////////////
 
 // let number = 5; debugger
@@ -486,72 +567,72 @@
 
 ///////////////////////HW///////////////////////////////////
 
-const restorantData = {
-    menu: [
-        {
-            name: 'Salad Caesar',
-            price: '14$'
-        },
-        {
-            name: 'Pizza Diavola',
-            price: '9$'
-        },
-        { 
-            name: 'Beefsteak',
-            price: '17$'
-        },
-        {
-            name: 'Napoleon',
-            price: '7$'
-        }
-    ],
-    waitors: [
-        {name: 'Alice', age: 22}, {name: 'John', age: 24}
-    ],
-    averageLunchPrice: '20$',
-    openNow: true
+// const restorantData = {
+//     menu: [
+//         {
+//             name: 'Salad Caesar',
+//             price: '14$'
+//         },
+//         {
+//             name: 'Pizza Diavola',
+//             price: '9$'
+//         },
+//         { 
+//             name: 'Beefsteak',
+//             price: '17$'
+//         },
+//         {
+//             name: 'Napoleon',
+//             price: '7$'
+//         }
+//     ],
+//     waitors: [
+//         {name: 'Alice', age: 22}, {name: 'John', age: 24}
+//     ],
+//     averageLunchPrice: '20$',
+//     openNow: true
 	
-};
+// };
 
-function isOpen(prop) {
-    let answer = '';
-    prop ? answer = 'Открыто' : answer = 'Закрыто';
-    return answer;
-}
-console.log(isOpen(restorantData.openNow));
+// function isOpen(prop) {
+//     let answer = '';
+//     prop ? answer = 'Открыто' : answer = 'Закрыто';
+//     return answer;
+// }
+// console.log(isOpen(restorantData.openNow));
 
-function isAverageLunchPriceTrue(fDish, sDish, average) {
-    if (+fDish.price.slice(0, -1) + (+sDish.price.slice(0, -1)) < +average.slice(0, -1)) {
-        return 'Цена ниже средней';
-    } else {
-        return 'Цена выше средней';
-    }
+// function isAverageLunchPriceTrue(fDish, sDish, average) {
+//     if (+fDish.price.slice(0, -1) + (+sDish.price.slice(0, -1)) < +average.slice(0, -1)) {
+//         return 'Цена ниже средней';
+//     } else {
+//         return 'Цена выше средней';
+//     }
 	
-}
+// }
 
-console.log(isAverageLunchPriceTrue(restorantData.menu[1], restorantData.menu[3], restorantData.averageLunchPrice));
+// console.log(isAverageLunchPriceTrue(restorantData.menu[1], restorantData.menu[3], restorantData.averageLunchPrice));
 
-function transferWaitors(data) {
-    const copy = Object.assign({}, data);
+// function transferWaitors(data) {
+//     const copy = Object.assign({}, data);
 
-    copy.waitors = [{name: 'Mike', age: 32}];
-    return copy;
-}
+//     copy.waitors = [{name: 'Mike', age: 32}];
+//     return copy;
+// }
 
-transferWaitors(restorantData);
+// transferWaitors(restorantData);
 
 //////////////////////////////////////////////////////////////////////////
 
 
 ////random
 
-let max = 290,
-    min = 180;
+// let max = 290,
+//     min = 180;
 
-    let c = () => {
-        return `#${(Math.floor(Math.random() * (max - min) + min))}`;
-    };
-let c2 = c();
-// let c2 = `#${c()}`;
-console.log(c2);
-console.log(typeof(c2));
+//     let c = () => {
+//         return `#${(Math.floor(Math.random() * (max - min) + min))}`;
+//     };
+// let c2 = c();
+// // let c2 = `#${c()}`;
+// console.log(c2);
+// console.log(typeof(c2));

@@ -30,6 +30,7 @@ req.then((product) => {
     console.log("finally");
 });
 
+
 // const test = time => {
 //     return new Promise(resolve => {
 //         setTimeout(() => resolve(), time);
@@ -63,7 +64,6 @@ const willIGetNewPhone = new Promise(
             const reason = new Error('mom is not happy');
             reject(reason);
         }
-
     }
 );
 const showOff = function (phone) {
