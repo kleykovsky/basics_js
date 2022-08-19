@@ -411,19 +411,52 @@
 // console.log(arr2);
 ////////////////////////////////////////////////
 //input
-document.querySelector('#btn').addEventListener('click', () => {
-    getData(fixData);
-});
-function getData(fixFunc) {
-    const getData = document.querySelector('#usd').value;
-    console.log(fixFunc(getData));
+// document.querySelector('#btn').addEventListener('click', () => {
+//     getData(fixData);
+// });
+// function getData(fixFunc) {
+//     const getData = document.querySelector('#usd').value;
+//     console.log(fixFunc(getData));
+// }
+// function fixData(str) {
+//     return str.trim().toLowerCase();
+// }
+// function fixData2(str) {
+//     return str.trim().toUpperCase();
+// }
+///callback
+// function myFunction(callback) {
+//     const a  = [1, 2, 3, 4, 5];
+//     let element = document.querySelector('label');
+//     callback(element, a);
+// }
+// function out1(elem, arr) {
+//    elem.innerText = arr.join(' ');
+// }
+// myFunction(out1);
+//////////////////////////////////////////////
+//callback = fetch
+function getDataCats(callback) {
+    fetch('https://cat-fact.herokuapp.com/facts')
+    .then(response => {
+        return response.json();
+    })
+    .then(data => {
+        console.log(data);
+        callback(data);
+    });
 }
-function fixData(str) {
-    return str.trim().toLowerCase();
+function showData(data) {
+    data.forEach(item => console.log(item._id));
 }
-function fixData2(str) {
-    return str.trim().toUpperCase();
+
+function showData2(data) {
+    data.forEach(item => document.querySelector('label').innerText = (` Type: ${item.type},` + ` Id: ${item._id};`));
 }
+
+getDataCats(showData2);
+getDataCats(showData);
+//////////////////////////////////////////////
 //////////////////////////////////////////////
 //Асинхронные callback функции
 
@@ -465,23 +498,23 @@ function fixData2(str) {
 // }
 // pageLoader();
 
-function pageLoader(url, callback) {
-    fetch(url)
-        .then(response => response.json())
-        .then(json => callback(json));
-}
+// function pageLoader(url, callback) {
+//     fetch(url)
+//         .then(response => response.json())
+//         .then(json => callback(json));
+// }
 
 
-function getAjax(data) {
-    console.log('after request');
-    console.log('response');
-    console.log(data);
-    pageLoader('https://jsonplaceholder.typicode.com/users/' + data.userId, showUser);
-}
-function showUser(user) {
-    console.log(user);
-}
-pageLoader('https://jsonplaceholder.typicode.com/todos/1', getAjax);
+// function getAjax(data) {
+//     console.log('after request');
+//     console.log('response');
+//     console.log(data);
+//     pageLoader('https://jsonplaceholder.typicode.com/users/' + data.userId, showUser);
+// }
+// function showUser(user) {
+//     console.log(user);
+// }
+// pageLoader('https://jsonplaceholder.typicode.com/todos/1', getAjax);
 //////////////////////////////////////////////
 
 
