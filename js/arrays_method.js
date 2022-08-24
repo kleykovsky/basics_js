@@ -2,36 +2,36 @@
 
 // let arrOne = ['Alex', 'Bob', 'Jon', 1, 2, 3];
 // let arrTwo = [10, 20, 30, {name: 'Alex', age: 33}, 'Alex', [2, 1, 4]];
-let arrThree = [1, 2, 3, 23, 44, 5, 66, 11, 22];
-// let arr = [1, 2, 3, 23, 44, 5, 66, 11, 22];
-// console.log(arrOne.sort());
-// console.log(arrTwo.toString());
-// console.log(arrThree.sort());
+// let arrThree = [1, 2, 3, 23, 44, 5, 66, 11, 22];
+// // let arr = [1, 2, 3, 23, 44, 5, 66, 11, 22];
+// // console.log(arrOne.sort());
+// // console.log(arrTwo.toString());
+// // console.log(arrThree.sort());
 
 
-// let result = arr.map(function(item, index, array) {
-//    console.log(item, index, array); // возвращается новое значение вместо элемента
-//   });
+// // let result = arr.map(function(item, index, array) {
+// //    console.log(item, index, array); // возвращается новое значение вместо элемента
+// //   });
 
-//// стрелочная функ-я для сортировки массива //////////////////////////
+// //// стрелочная функ-я для сортировки массива //////////////////////////
 
-console.log(arrThree.sort((a, b) => a - b));
+// console.log(arrThree.sort((a, b) => a - b));
 
-// Преобразование массива ///////////////////////////////
+// // Преобразование массива ///////////////////////////////
 
-// // let arrOne = ['Alex', 'Bob', 'Jon', 1, 2, 3];
-let arrTwo = [10, 20, 30, {name: 'Alex', age: 33, key: 22}, [2, 1, 4]];
-// // // // let arrThree = [1, 2, 3, 23, 44, 5, 66, 11, 22];
+// // // let arrOne = ['Alex', 'Bob', 'Jon', 1, 2, 3];
+// let arrTwo = [10, 20, 30, {name: 'Alex', age: 33, key: 22}, [2, 1, 4]];
+// // // // // let arrThree = [1, 2, 3, 23, 44, 5, 66, 11, 22];
 
-let newArr = arrTwo.map(person => {
-	return person;
-});
+// let newArr = arrTwo.map(person => {
+// 	return person;
+// });
 
-console.log(arrTwo);
-console.log(newArr);
-for (let i of newArr) {
-    console.log(i);
-}
+// console.log(arrTwo);
+// console.log(newArr);
+// for (let i of newArr) {
+//     console.log(i);
+// }
 //////////////////////////////////////////////////////////
 
 // Добавления эл-а в массива ///////////////////////////////
@@ -164,20 +164,20 @@ for (let i of newArr) {
 
 //// Преобразуем неупорядоченный набор символов - в упорядоченный массив
 // const str = prompt('', '');
-const str = 'wwwww, eeeee, rrrrrrr, aaaaaaa, 11111, 22222, 55555';
-const products = str.split(','); //преобразует в массив
+// const str = 'wwwww, eeeee, rrrrrrr, aaaaaaa, 11111, 22222, 55555';
+// const products = str.split(','); //преобразует в массив
+// // console.log(products);
+// products.sort();  // Сортирует все элем. как строки
+
+// // console.log(products.trim());
+// console.log(products.join(';')); // добавляет - ; ко всем элем. и возв. строку
 // console.log(products);
-products.sort();  // Сортирует все элем. как строки
-
-// console.log(products.trim());
-console.log(products.join(';')); // добавляет - ; ко всем элем. и возв. строку
-console.log(products);
-// for (let value of products) {
-//     console.log(products.length);
+// // for (let value of products) {
+// //     console.log(products.length);
    
-// }
+// // }
 
-products.forEach(value => console.log(value));
+// products.forEach(value => console.log(value));
 
 // console.log(arr);
 // // arr.pop();   /// dell elem to the end of the array
@@ -207,24 +207,24 @@ products.forEach(value => console.log(value));
 
 ////////////////////////HW///////////////////////////////////////////
 ////Делим массив на 3 подмосива + элемент как строка/////////////////////
-const students = ['1', '2', '3', '4', '5', '6', '7', '8', '10'];
-function sortStudentsByGroup(arr) {
-    const gr1 = [], gr2 = [], gr3 = [], rem = []; 
-    arr.sort();
-    for (let i = 0; i < arr.length; i++) {
-        if (i < 3) {
-            gr1.push(arr[i]);
-        } else if (i < 6 && i >= 3) {
-            gr2.push(arr[i]);
-        } else if (i < 9 && i >= 6) {
-            gr3.push(arr[i]);
-        } else {
-            rem.push(arr[i]);
-        }
-    }
-    return [gr1, gr2, gr3, `Оставшиеся студенты: ${rem.length === 0 ? '-' : rem.join(', ')}`];
-}
-sortStudentsByGroup(students);
+// const students = ['1', '2', '3', '4', '5', '6', '7', '8', '10'];
+// function sortStudentsByGroup(arr) {
+//     const gr1 = [], gr2 = [], gr3 = [], rem = []; 
+//     arr.sort();
+//     for (let i = 0; i < arr.length; i++) {
+//         if (i < 3) {
+//             gr1.push(arr[i]);
+//         } else if (i < 6 && i >= 3) {
+//             gr2.push(arr[i]);
+//         } else if (i < 9 && i >= 6) {
+//             gr3.push(arr[i]);
+//         } else {
+//             rem.push(arr[i]);
+//         }
+//     }
+//     return [gr1, gr2, gr3, `Оставшиеся студенты: ${rem.length === 0 ? '-' : rem.join(', ')}`];
+// }
+// sortStudentsByGroup(students);
 ////////////////////////////////////////////////////////////////////
 
 // const arr = ['1', '2', [3]];
@@ -293,6 +293,7 @@ sortStudentsByGroup(students);
 ///[ 'alex', 'ivan' ]
 /////////////////////////HW///////////////////////////////////////////
 
+//1
 const films = [
     {
         name: 'Titanic',
@@ -311,4 +312,79 @@ const films = [
         rating: 4
     }
 ];
+console.log(films);
+function showGoodFilms(arr) {
+    return arr.filter(item => item.rating >= 8);
+}
+let a = showGoodFilms(films);
+console.log(a);
+
+function showListOfFilms(arr) {
+    let res = '';
+    for(let i = 0; i < arr.length; i++) {
+        res += arr[i].name + ", ";
+    }
+    return res.slice(0, -2);
+}
+let b = showListOfFilms(films);
+console.log(b);
+
+function setFilmsIds(arr) {
+    for(let i = 0; i < arr.length; i++) {
+        arr[i].id = i;
+    }
+    return arr;
+}
+let tranformedArray = setFilmsIds(films);
+console.log(tranformedArray);
+
+function checkFilms(arr) {
+    for(let i = 0; i < arr.length; i++) {
+        if(arr[i].id === undefined) return false;
+    }
+    return true;
+}
+console.log(checkFilms(tranformedArray));
+//////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////
+//2
+
+const founds = [
+    {amount: -1400},
+    {amount: 2400},
+    {amount: -1000},
+    {amount:   500},
+    {amount: 10400},
+    {amount: -11400},
+];
+
+function getPositiveIncomeAmount(data){
+    let accum = 0;
+    for(let i = 0; i < data.length; i++) {
+        if(data[i].amount > 0) accum += data[i].amount; 
+       }
+       return accum;
+       
+    // return data.filter(item => item.amount > 0).reduce((acc, accum) => acc + accum.amount, 0);
+}
+
+let gpia = getPositiveIncomeAmount(founds);
+console.log(gpia);
+
+function getTotallncomeAmount(data) {
+    let acc = true;
+    for(let i = 0; i < data.length; i++) {
+        if(data[i].amount < 0) acc = false;
+    }
+    if(acc) {
+        getPositiveIncomeAmount(data);
+    } else {
+        return data.reduce((accc, accum) => accc + accum.amount, 0);
+    }
+    
+    // return data.some(item => item.amoumt < 0) ? data.reduce((acc, accum) => acc + accum.amount, 0) : getPositiveIncomeAmount(data);
+}
+console.log(getTotallncomeAmount(founds));
+
+
 

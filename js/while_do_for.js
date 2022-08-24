@@ -129,7 +129,7 @@
 
 // const arr = [];
 // for (let i = 5; i <= 10; i++) {
-//    
+   
 //     arr[i - 5] = i;
 //     console.log(arr);
 // }
@@ -373,3 +373,22 @@ fib(10);
 // }
 // fib(5);
 /////////////////////////////////////////////////////
+
+function arraySum(arr) {
+	return getEven(arr).reduce(function(a, b){
+	  return a + b;
+	});
+  }
+  
+  var a = [1,2,3,4,5,6,7,8,9];
+  function arraySum(arr, elm) {
+	  arr = arr.slice(0);   
+	  for(var sum = 0, a; a = arr.pop();) sum += !elm || elm=="even" && !(a & 1) || elm== "odd" && a & 1 ? a : 0;
+	  return sum
+  
+  }
+  console.log(arraySum(a)); //сумма всех
+  
+  console.log(arraySum(a, 'even')); //сумма четных
+  
+  console.log(arraySum(a, 'odd')); //сумма нечетных
