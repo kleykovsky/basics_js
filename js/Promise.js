@@ -8,6 +8,7 @@
 //             name: 'TV',
 //             price: 1000,
 //         };
+       
 //         resolve(product);
 //         // reject();
 //     }, 2000);
@@ -51,7 +52,7 @@
 
 //Прмер:
 // Промис
-// const isMomHappy = true;
+// const isMomHappy = false;
 // const willIGetNewPhone = new Promise(
 //     (resolve, reject) => { // fat arrow
 //         if (isMomHappy) {
@@ -136,25 +137,25 @@
 ///////////////////////////////////////////////////
 //sleep
 
-const sleep = ms => {
-   return new Promise(resolve => {
-        setTimeout(() => resolve(), ms);
-    });
-};
-// sleep(2000).then(() => console.log('After 2 sec...'));
-// sleep(3000).then(() => console.log('After 3 sec...'));
+// const sleep = ms => {
+//    return new Promise(resolve => {
+//         setTimeout(() => resolve(), ms);
+//     });
+// };
+// // sleep(2000).then(() => console.log('After 2 sec...'));
+// // sleep(3000).then(() => console.log('After 3 sec...'));
 
-//Promise All
+// //Promise All
 
-Promise.all([sleep(2000), sleep(3000)])
-    .then(() => {
-        console.log('All promise');
-    });
+// Promise.all([sleep(2000), sleep(3000)])
+//     .then(() => {
+//         console.log('All promise');
+//     });
 
-//Promise Race
+// //Promise Race
 
-Promise.race([sleep(2000), sleep(3000)])
-    .then(() => {
-        console.log('Race promise');
-    });
+// Promise.race([sleep(2000), sleep(3000)])
+//     .then(() => {
+//         console.log('Race promise');
+//     });
 
