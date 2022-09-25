@@ -1,35 +1,35 @@
-// console.log('Request....');
+console.log('Request....');
 
-// const req = new Promise(function(resolve, reject) {
-//     setTimeout(() => {
-//         console.log('Waiting....');
+const req = new Promise(function(resolve, reject) {
+    setTimeout(() => {
+        console.log('Waiting....');
     
-//         const product = {
-//             name: 'TV',
-//             price: 1000,
-//         };
+        const product = {
+            name: 'TV',
+            price: 1000,
+        };
        
-//         resolve(product);
-//         // reject();
-//     }, 2000);
-// });
-// req.then((product) => {
-//     return new Promise(function(resolve, reject) {
-//         setTimeout(() => {
-//             product.status = 'order';
-//             resolve(product);
-//         }, 2000);
-//     });
-// }).then(data => {
-//     data.modify = true;
-//     return data;
-// }).then((data) => {
-//     console.log(data);
-// }).catch((error) => {
-//     console.log("***error***");
-// }).finally(() => {
-//     console.log("finally");
-// });
+        resolve(product);
+        // reject();
+    }, 2000);
+});
+req.then((product) => {
+    return new Promise(function(resolve, reject) {
+        setTimeout(() => {
+            product.status = 'order';
+            resolve(product);
+        }, 2000);
+    });
+}).then(data => {
+    data.modify = true;
+    return data;
+}).then((data) => {
+    console.log(data);
+}).catch((error) => {
+    console.log("***error***");
+}).finally(() => {
+    console.log("finally");
+});
 //////////////////////////////////////////
 
 // const test = time => {
