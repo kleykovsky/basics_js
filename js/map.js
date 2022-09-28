@@ -25,3 +25,19 @@ console.log(map.has(shops[0]));
 // map.delete();
 // map.clear();
 // map.size;
+
+let goods = [];
+// for(let shop of map.keys()) {
+//     goods.push(Object.keys(shop)[0]);
+// }
+// console.log(goods);
+
+// for (let price of map.values()) {
+//     goods.push(price);
+// }
+// console.log(goods);
+
+for (let price of map.values()) {
+    goods.push(price);
+}
+console.log(goods);
