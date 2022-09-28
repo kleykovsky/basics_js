@@ -1,4 +1,4 @@
-// Классы
+    // Классы
 class Rectangle { // Инкапсуляция (концепция класса Rectangle)
     constructor(height, width) {
         this.height = height;

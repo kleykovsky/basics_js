@@ -137,3 +137,16 @@ for (let value of str) {
 }
 arrForOf.slice();
 console.log(arrForOf.join('').split());
+
+////////////////////////////////////////////////////////\
+let obj = {
+	1: 1,
+	2: 2,
+}
+obj[2] = 20;
+
+console.log(obj)
+Object.freeze(obj);
+obj[3] = 20;
+
+console.log(Object.isFrozen(obj));
