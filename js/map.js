@@ -13,7 +13,7 @@ let map = new Map([
 
 shops.forEach((shops, i) => {
     map.set(shops, budget[i]);
-})
+});
 
 console.log(map);
 
