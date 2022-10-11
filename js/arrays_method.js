@@ -291,100 +291,114 @@
 // .map(value => value[0]);
 // console.log(newArray);
 ///[ 'alex', 'ivan' ]
+
+// Spread
+// const array1 = ['a', 'b', 'c', 'd'];
+// const newArray = [1, 2, 3, ...array1];
+// console.log(newArray)
+
+// Rest
+// const array1 = ['a', 'b', 'c', 'd'];
+// const [one, wer, ...rest] = array1;
+// console.log(rest)
+
+
 /////////////////////////HW///////////////////////////////////////////
 
 //1
-const films = [
-    {
-        name: 'Titanic',
-        rating: 9
-    },
-    {
-        name: 'Die hard 5',
-        rating: 5
-    },
-    {
-        name: 'Matrix',
-        rating: 8
-    },
-    {
-        name: 'Some bad film',
-        rating: 4
-    }
-];
-console.log(films);
-function showGoodFilms(arr) {
-    return arr.filter(item => item.rating >= 8);
-}
-let a = showGoodFilms(films);
-console.log(a);
-
-function showListOfFilms(arr) {
-    let res = '';
-    for(let i = 0; i < arr.length; i++) {
-        res += arr[i].name + ", ";
-    }
-    return res.slice(0, -2);
-}
-let b = showListOfFilms(films);
-console.log(b);
-
-function setFilmsIds(arr) {
-    for(let i = 0; i < arr.length; i++) {
-        arr[i].id = i;
-    }
-    return arr;
-}
-let tranformedArray = setFilmsIds(films);
-console.log(tranformedArray);
-
-function checkFilms(arr) {
-    for(let i = 0; i < arr.length; i++) {
-        if(arr[i].id === undefined) return false;
-    }
-    return true;
-}
-console.log(checkFilms(tranformedArray));
+// const films = [
+//     {
+//         name: 'Titanic',
+//         rating: 9
+//     },
+//     {
+//         name: 'Die hard 5',
+//         rating: 5
+//     },
+//     {
+//         name: 'Matrix',
+//         rating: 8
+//     },
+//     {
+//         name: 'Some bad film',
+//         rating: 4
+//     }
+// ];
+// console.log(films);
+// function showGoodFilms(arr) {
+//     return arr.filter(item => item.rating >= 8);
+// }
+// let a = showGoodFilms(films);
+// console.log(a);
+//
+// function showListOfFilms(arr) {
+//     let res = '';
+//     for(let i = 0; i < arr.length; i++) {
+//         res += arr[i].name + ", ";
+//     }
+//     return res.slice(0, -2);
+// }
+// let b = showListOfFilms(films);
+// console.log(b);
+//
+// function setFilmsIds(arr) {
+//     for(let i = 0; i < arr.length; i++) {
+//         arr[i].id = i;
+//     }
+//     return arr;
+// }
+// let tranformedArray = setFilmsIds(films);
+// console.log(tranformedArray);
+//
+// function checkFilms(arr) {
+//     for(let i = 0; i < arr.length; i++) {
+//         if(arr[i].id === undefined) return false;
+//     }
+//     return true;
+// }
+// console.log(checkFilms(transformedArray));
 //////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////
 //2
 
-const founds = [
-    {amount: -1400},
-    {amount: 2400},
-    {amount: -1000},
-    {amount:   500},
-    {amount: 10400},
-    {amount: -11400},
-];
+// const founds = [
+//     {amount: -1400},
+//     {amount: 2400},
+//     {amount: -1000},
+//     {amount:   500},
+//     {amount: 10400},
+//     {amount: -11400},
+// ];
+//
+// function getPositiveIncomeAmount(data){
+//     let accum = 0;
+//     for(let i = 0; i < data.length; i++) {
+//         if(data[i].amount > 0) accum += data[i].amount;
+//        }
+//        return accum;
+//
+//     // return data.filter(item => item.amount > 0).reduce((acc, accum) => acc + accum.amount, 0);
+// }
+//
+// let gpia = getPositiveIncomeAmount(founds);
+// console.log(gpia);
+//
+// function getTotallncomeAmount(data) {
+//     let acc = true;
+//     for(let i = 0; i < data.length; i++) {
+//         if(data[i].amount < 0) acc = false;
+//     }
+//     if(acc) {
+//         getPositiveIncomeAmount(data);
+//     } else {
+//         return data.reduce((accc, accum) => accc + accum.amount, 0);
+//     }
+//
+//     // return data.some(item => item.amoumt < 0) ? data.reduce((acc, accum) => acc + accum.amount, 0) : getPositiveIncomeAmount(data);
+// }
+// console.log(getTotallncomeAmount(founds));
 
-function getPositiveIncomeAmount(data){
-    let accum = 0;
-    for(let i = 0; i < data.length; i++) {
-        if(data[i].amount > 0) accum += data[i].amount; 
-       }
-       return accum;
-       
-    // return data.filter(item => item.amount > 0).reduce((acc, accum) => acc + accum.amount, 0);
-}
 
-let gpia = getPositiveIncomeAmount(founds);
-console.log(gpia);
-
-function getTotallncomeAmount(data) {
-    let acc = true;
-    for(let i = 0; i < data.length; i++) {
-        if(data[i].amount < 0) acc = false;
-    }
-    if(acc) {
-        getPositiveIncomeAmount(data);
-    } else {
-        return data.reduce((accc, accum) => accc + accum.amount, 0);
-    }
-    
-    // return data.some(item => item.amoumt < 0) ? data.reduce((acc, accum) => acc + accum.amount, 0) : getPositiveIncomeAmount(data);
-}
-console.log(getTotallncomeAmount(founds));
 
 
 
